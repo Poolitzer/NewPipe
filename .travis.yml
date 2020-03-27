@@ -12,7 +12,7 @@ android:
 
 before_install: 
   - yes | sdkmanager "platforms;android-28"
-script: ./gradlew -Dorg.gradle.jvmargs=-Xmx1536m assembleDebug lintDebug testDebugUnitTest
+script: ./gradlew -Dorg.gradle.jvmargs=-Xmx1536m assembleDebug lintDebug testDebugUnitTest checkstyle
 
 licenses:
   - '.+'
