@@ -92,7 +92,7 @@ checkstyle {
     toolVersion = "${checkstyleVersion}"
 }
 
-task checkstyle(type: Checkstyle) {
+task runCheckstyle(type: Checkstyle) {
     source 'src'
     include '**/*.java'
     exclude '**/gen/**'
@@ -111,8 +111,8 @@ task checkstyle(type: Checkstyle) {
     }
 }
 
-tasks.withType(Checkstyle).each { checkstyleTask ->
-    checkstyleTask.doLast {
+tasks.withType(Checkstyle).each {
+    checkstyleTask -> checkstyleTask.doLast {
         reports.all { report ->
             def outputFile = report.destination
             if (outputFile.exists() && outputFile.text.contains("<error ")) {
@@ -121,6 +121,8 @@ tasks.withType(Checkstyle).each { checkstyleTask ->
         }
     }
 }
+
+preBuild.dependsOn runCheckstyle
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
