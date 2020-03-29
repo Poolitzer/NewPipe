@@ -1,4 +1,9 @@
-<!-- Hey there. Thank you so much for improving NewPipe. Please take a moment to fill out the following suggestion on how to structure this PR description. Having roughly the same layout helps everyone considerably :)-->
+<!-- Hey there. Thank you so much for improving NewPipe. Please take a moment to fill out the following suggestion on how to structure this PR description. Having roughly the same layout helps everyone considerably :)
+
+Also make sure to check your code style, the test worklflow will fail if you have issues. You have to run runCheckstyle task from app/build.gradle.
+To do that, go in android studio to in build.gradle (Module: app), and click on the run button for the task runCheckStyle.
+Alternatively, go to the root of NewPipe and do ./gradlew runCheckstyle.
+-->
 
 #### What is it?
 - [ ] Bug fix
